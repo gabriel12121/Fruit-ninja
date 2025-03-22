@@ -1,3 +1,4 @@
+
 {
   "nodes": [
     {
@@ -12,7 +13,8 @@
     },
     {
       "parameters": {
-        "url": "https://api.linketrack.com/track/json?user=48244369000176&token=gR9dMTzcKYJeVkEfSSf0w36LXGhpeoUyBk7ZO0YT&codigo={{$json[\"codigo\"]}}",
+        "url": "https://api.linketrack.com/track/json?user=48244369000176&token=gR9dMTzcKYJeVkEfSSf0w36LXGhpeoUyBk7ZO0YT&codigo={{$json["codigo"]}}
+",
         "method": "GET",
         "responseFormat": "json"
       },
@@ -24,9 +26,9 @@
     {
       "parameters": {
         "resource": "message",
-        "from": "whatsapp:+14155238886",
-        "to": "whatsapp:+55XXXXXXXXXXX",
-        "message": "📦 *Atualização do Pedido*\n\nStatus: {{$json[\"evento\"][0][\"status\"]}}\nData: {{$json[\"evento\"][0][\"data\"]}}\nHora: {{$json[\"evento\"][0][\"hora\"]}}"
+        "from": "+14155238886",
+        "to": "+55XXXXXXXXXXX",
+        "message": "Olá, seu pedido está com status: {{$json[\"evento\"][0][\"status\"]}} em {{$json[\"evento\"][0][\"data\"]}}"
       },
       "name": "Enviar WhatsApp via Twilio",
       "type": "n8n-nodes-base.twilio",
@@ -58,5 +60,4 @@
       ]
     }
   }
-      }
-    
+}
